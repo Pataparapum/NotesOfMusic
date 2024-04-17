@@ -1,0 +1,45 @@
+html, body {
+    display: flex;
+    flex-direction: column;
+    background-color: #191919;
+    color: #f3ebdf;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+#navContainer{
+    min-height: 100vh;
+    max-height: 100;
+    background-color: #202020;
+    border: 1px solid #262626;
+}
+
+#bloque{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+#bloque:hover{
+    background-color: #262626;
+}
+
+
+.nuevo{
+    font-size: 90px;
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: 100;
+    color:beige;
+}
+
+.carpeta{
+    font-size: 100px;
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: 100;
+    color:beige;
+}

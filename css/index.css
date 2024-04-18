@@ -13,7 +13,7 @@ html, body {
     border: 1px solid #262626;
 }
 
-#bloque{
+.bloqueNoteFold{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,6 +28,14 @@ html, body {
     border: none;
 }
 
+.menuNoteFold{
+    background-color: #262626;
+    border-radius: 10px;
+}
+
+.botonNoteFold{
+    color: #f3ebdf;
+}
 
 .nuevoNoteFold{
     font-size: 90px;

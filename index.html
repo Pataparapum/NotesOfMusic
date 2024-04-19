@@ -12,22 +12,25 @@
     <title>NoteOfMusic: pagina principal</title>
 </head>
 <body>
+    <!--Container que divide el nav del main-->
     <div class="container-fluid">
         <div class="row"> 
+            <!--Navegador de carpetas-->
             <div id="navContainer" class="col-2">
                 <nav >
                     
                 </nav>
             </div>
-    
+            
+            <!--notas, carpetas, y creacion de estas-->
             <main class="col-10">
                 <div class="container">
                     <div id="foldersNote" class="row">
                         <div id="bloque1" class="bloqueNoteFold col-3 btn-group dropend">
-                            <button type="button" class="boton btn btn-secondary dropsown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" id="boton1" class="boton btn btn-secondary dropsown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i id="fol1" class="fa-solid fa-plus nuevoNoteFold"></i>
                             </button>
-                            <ul class="dropdown-menu menuNoteFold">
+                            <ul id="ul1" class="dropdown-menu menuNoteFold">
                                 <li class="noteFold border-bottom border-secondary"><button type="button" class="botonNoteFold btn">Carpeta</button></li>
                                 <li class="noteFold"><button type="button" class="botonNoteFold btn">Nota</button></li>
                             </ul>

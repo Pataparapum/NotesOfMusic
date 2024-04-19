@@ -2,37 +2,55 @@
  * Js para tranajar en las funciones del index y experimentar
  */
 
+
+/**
+ * Declaracion de variables principales
+ */
 var folders = document.getElementById('foldersNote');
 var notesFolder = document.getElementsByClassName('botonNoteFold')
 var count = 1;
 
-function createNoteFoldEvent(){
+/**
+ * Funcion que crea el evento para crear notas o carpetas
+ */
+function createEventNoteFold(){
     for (let noteFold of notesFolder){
-        noteFold.addEventListener('click', experimento);
+        noteFold.addEventListener('click', createNoteFoldEvent);
     }
 }
 
-function divSetAttribute(div){
+/**
+ * Funcion que setea los elementos pedido por los parametros:
+ * @param {*} div 
+ * @param {*} button 
+ * @param {*} i 
+ * @param {*} ul 
+ */
+function elementSetAttribute(div, button ,i ,ul){
     div.setAttribute('id',`bloque${count}`);
     div.setAttribute('class','bloqueNoteFold col-3 btn-group dropend');
-}
 
-function buttonNoteFoldSetAttribute(button){
     button.setAttribute('type','button');
     button.setAttribute('class','boton btn btn-secondary dropsown-toggle');
     button.setAttribute('data-bs-toggle','dropdown');
     button.setAttribute('aria-expanded','false');
-}
+    button.setAttribute('id',`boton${count}`);
 
-function iSetAttribute(i){
     i.setAttribute('id',`fol${count}`);
     i.setAttribute('class', 'fa-solid fa-plus nuevoNoteFold');
-}
 
-function ulSetAttribute(ul){
     ul.setAttribute('class','dropdown-menu menuNoteFold');
+    ul.setAttribute('id',`ul${count}`);
 }
 
+/**
+ * Funcion que setea los atributos del elemento li
+ * 
+ * @param {*} liFold 
+ * @param {*} liNote 
+ * @param {*} liFoldButton 
+ * @param {*} liNoteButton 
+ */
 function liSetAttribute(liFold, liNote, liFoldButton, liNoteButton){
     liFold.setAttribute('class','noteFold border-bottom border-secondary');
     liFoldButton.setAttribute('type','button');
@@ -45,6 +63,9 @@ function liSetAttribute(liFold, liNote, liFoldButton, liNoteButton){
     liNoteButton.innerText = "Nota";
 }
 
+/**
+ * Funcion que crea un nuevo bloque de nota o carpeta
+ */
 function createBlockNoteFold() {
     count += 1
     let divBloque = document.createElement('div');
@@ -58,10 +79,7 @@ function createBlockNoteFold() {
     let liNote = document.createElement('li');
     let liNoteButton = document.createElement('button');
 
-    divSetAttribute(divBloque);
-    buttonNoteFoldSetAttribute(buttonNoteFold);
-    iSetAttribute(imageNoteFold);
-    ulSetAttribute(ulDropdowMenu);
+    elementSetAttribute(divBloque, buttonNoteFold, imageNoteFold, ulDropdowMenu)
     liSetAttribute(liFold, liNote, liFoldButton, liNoteButton);
     
     liFold.appendChild(liFoldButton);
@@ -78,22 +96,54 @@ function createBlockNoteFold() {
     folders.appendChild(divBloque);
 }
 
-function experimento(event) {
-    let noteFold = event.target;
-    let i = document.getElementById(`fol${count}`);
+/**
+ * Funcion que setea los atributos del boton y cambia los del i
+ * para cambiar el hecho de que ya no crea nuevos elementos
+ * sino que es uno nuevo
+ * @param {*} i 
+ * @param {*} button 
+ * @param {*} noteFold 
+ */
+function changeBlockNoteFold(i,button,noteFold) {
 
-    if (noteFold.innerText == 'Carpeta'){
+    if (noteFold == 'Carpeta'){
+        button.setAttribute('type','button');
+        button.setAttribute('class','boton btn btn-secondary')
+        button.setAttribute('id','buttonFold')
         i.setAttribute('class',"fa-solid fa-folder-open nuevoNoteFold");
-    } else if (noteFold.innerText == 'Nota') {
-        i.setAttribute('class','fa-regular fa-file-lines nuevoNoteFold')
-    }
-    
-    
+        button.appendChild(i)
+    } else if (noteFold == 'Nota') {
+        button.setAttribute('type','button');
+        button.setAttribute('class','boton btn btn-secondary')
+        button.setAttribute('id','buttonNote')
+        i.setAttribute('class','fa-regular fa-file-lines nuevoNoteFold');
+        button.appendChild(i)
+    };
+}
+
+/**
+ * Evento de creacion de nota o carpeta
+ * @param {*} event 
+ */
+function createNoteFoldEvent(event) {
+    var noteFold = event.target;
+    let i = document.getElementById(`fol${count}`);
+    let div = document.getElementById(`bloque${count}`);
+    let button = document.getElementById(`boton${count}`);
+    let ul = document.getElementById(`ul${count}`);
+    let buttonOpenNoteFold = document.createElement('button')
+
+    changeBlockNoteFold(i,buttonOpenNoteFold,noteFold.innerText);
+
     createBlockNoteFold();
     createNoteFoldEvent();
 
-    
+    div.removeChild(ul)
+    div.removeChild(button);
+
+    div.appendChild(buttonOpenNoteFold);
+     
 }
 
-createNoteFoldEvent();
+createEventNoteFold();
 

@@ -126,7 +126,7 @@ function changeBlockNoteFold(i,button,noteFold) {
  * @param {*} event 
  */
 function createNoteFoldEvent(event) {
-    var noteFold = event.target;
+    var noteFold = event.target
     let i = document.getElementById(`fol${count}`);
     let div = document.getElementById(`bloque${count}`);
     let button = document.getElementById(`boton${count}`);
@@ -136,7 +136,7 @@ function createNoteFoldEvent(event) {
     changeBlockNoteFold(i,buttonOpenNoteFold,noteFold.innerText);
 
     createBlockNoteFold();
-    createNoteFoldEvent();
+    createEventNoteFold();
 
     div.removeChild(ul)
     div.removeChild(button);

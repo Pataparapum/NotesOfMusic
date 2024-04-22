@@ -110,12 +110,14 @@ function changeBlockNoteFold(i,button,noteFold) {
         button.setAttribute('type','button');
         button.setAttribute('class','boton btn btn-secondary')
         button.setAttribute('id','buttonFold')
+        button.setAttribute('href','./fold.html')
         i.setAttribute('class',"fa-solid fa-folder-open nuevoNoteFold");
         button.appendChild(i)
     } else if (noteFold == 'Nota') {
         button.setAttribute('type','button');
         button.setAttribute('class','boton btn btn-secondary')
         button.setAttribute('id','buttonNote')
+        button.setAttribute('href','./note.html')
         i.setAttribute('class','fa-regular fa-file-lines nuevoNoteFold');
         button.appendChild(i)
     };
@@ -131,7 +133,7 @@ function createNoteFoldEvent(event) {
     let div = document.getElementById(`bloque${count}`);
     let button = document.getElementById(`boton${count}`);
     let ul = document.getElementById(`ul${count}`);
-    let buttonOpenNoteFold = document.createElement('button')
+    let buttonOpenNoteFold = document.createElement('a')
 
     changeBlockNoteFold(i,buttonOpenNoteFold,noteFold.innerText);
 

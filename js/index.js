@@ -8,8 +8,9 @@
  */
 var folders = document.getElementById('foldersNote');
 var notesFolder = document.getElementsByClassName('botonNoteFold')
+var countFold = 1;
+var countNote = 1;
 var count = 1;
-
 /**
  * Funcion que crea el evento para crear notas o carpetas
  */
@@ -112,6 +113,7 @@ function changeBlockNoteFold(i,button,noteFold) {
         button.setAttribute('id','buttonFold')
         button.setAttribute('href','./fold.html')
         i.setAttribute('class',"fa-solid fa-folder-open nuevoNoteFold");
+        i.setAttribute('id',`fold${countFold}`);
         button.appendChild(i)
     } else if (noteFold == 'Nota') {
         button.setAttribute('type','button');
@@ -119,8 +121,12 @@ function changeBlockNoteFold(i,button,noteFold) {
         button.setAttribute('id','buttonNote')
         button.setAttribute('href','./note.html')
         i.setAttribute('class','fa-regular fa-file-lines nuevoNoteFold');
+        i.setAttribute('id',`note${countNote}`);
         button.appendChild(i)
     };
+
+    countFold += 1;
+    countNote += 1;
 }
 
 /**

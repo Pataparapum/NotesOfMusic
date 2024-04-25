@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Ojuju:wght@200..800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cc7bac99e2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/nav.css">
     <title>NoteOfMusic: pagina principal</title>
 </head>
 <body>
@@ -16,16 +17,30 @@
     <div class="container-fluid">
         <div class="row"> 
             <!--Navegador de carpetas-->
-            <div id="navContainer" class="col-2">
-                <nav >
-                    
-                </nav>
+            <div id="navbar" class="col-2">
+                <div id="navContainer">
+                    <nav>
+                        <div class="-navbar-">
+                            <div class="main-item">
+                                principal
+                            </div>
+                            <ul id="BarraCarpetas">
+                                <li id="BarraPrincipal">
+                                    <div class="line-vertical"></div>
+                                    <div class="line-horizontal"></div>
+                                    <a href="fold.html" title="fold">Carpeta prueba</a>
+                                </li>
+                            </ul>
+                        
+                        </div>
+                    </nav>
+                </div>
             </div>
             
             <!--notas, carpetas, y creacion de estas-->
             <main class="col-10">
                 <div class="container">
-                    <div id="foldersNote" class="row">
+                    <div id="foldersNote1" class="row">
                         <div id="bloque1" class="bloqueNoteFold col-3 btn-group dropend">
                             <button type="button" id="boton1" class="boton btn btn-secondary dropsown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i id="fol1" class="fa-solid fa-plus nuevoNoteFold"></i>
@@ -41,6 +56,7 @@
         </div>
     </div>
 
+    <script src="./js/navScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
 </body>

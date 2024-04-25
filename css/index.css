@@ -12,7 +12,18 @@ html, body {
     min-height: 100vh;
     max-height: 100vh;
     background-color: #202020;
-    border: 1px solid #262626;
+    position: fixed;
+    width: 16.66666667%;
+}
+
+#navBar{
+    background-color: #202020;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+#barraPrincipal{
+    list-style: none;
 }
 
 /*Estilo sobre las clases*/

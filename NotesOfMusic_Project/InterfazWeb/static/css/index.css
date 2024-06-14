@@ -1,0 +1,68 @@
+/*Estilo general*/
+html, body {
+    display: flex;
+    flex-direction: column;
+    background-color: #191919;
+    color: #f3ebdf;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+/*Estilo sobre los IDs*/
+#navContainer{
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: #202020;
+    position: fixed;
+    width: 16.66666667%;
+}
+
+#navBar{
+    background-color: #202020;
+    min-height: 100vh;
+    max-height: 100vh;
+}
+
+#barraPrincipal{
+    list-style: none;
+}
+
+/*Estilo sobre las clases*/
+.bloqueNoteFold{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.boton{
+    background-color: #191919;
+    border: none;
+}
+
+.menuNoteFold{
+    background-color: #262626;
+    border-radius: 10px;
+}
+
+.botonNoteFold{
+    color: #f3ebdf;
+}
+
+.nuevoNoteFold{
+    font-size: 90px;
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: 100;
+    color:beige;
+}
+
+.carpeta{
+    font-size: 100px;
+    user-select: none;
+    -webkit-user-select: none;
+    font-weight: 100;
+    color:beige;
+}
